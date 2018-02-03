@@ -26,5 +26,5 @@ echo "*/5 * * * * bash /etc/local/autolimit/bin.sh" >> $cronfile
 echo "*/5 * * * * bash /etc/local/autolimit/limit/main.sh" >> $cronfile
 crontab $cronfile
 rm -rf $cronfile
-echo -e "${Info} Cron set success."
-echo -e "${Info} Install success."
+echo -e "Cron set success."
+echo -e "Install success."
