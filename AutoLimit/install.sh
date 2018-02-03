@@ -14,9 +14,9 @@ LimitAutoCronBin="/usr/local/autolimit/limit/main.sh"
 
 mkdir /usr/local/autolimit
 mkdir /usr/local/autolimit/limit
-wget https://raw.githubusercontent.com/Thnineer/Bash/master/AutoLimit/v0.1/bin.sh -qO ${LimitAutoBin}
-wget https://raw.githubusercontent.com/Thnineer/Bash/master/AutoLimit/v0.1/limit/default-example.sh -qO ${LimitAutoCronExampleSh}
-wget https://raw.githubusercontent.com/Thnineer/Bash/master/AutoLimit/v0.1/limit/main.sh -qO ${LimitAutoCronBin}
+wget https://raw.githubusercontent.com/JasonLightone/Bash/master/AutoLimit/v0.1/bin.sh -qO ${LimitAutoBin}
+wget https://raw.githubusercontent.com/JasonLightone/Bash/master/AutoLimit/v0.1/limit/default-example.sh -qO ${LimitAutoCronExampleSh}
+wget https://raw.githubusercontent.com/JasonLightone/Bash/master/AutoLimit/v0.1/limit/main.sh -qO ${LimitAutoCronBin}
 [[ ! -e "${LimitAutoBin}" ]] && echo -e "${Error} AutolimitBin download failed !" && exit 1
 [[ ! -e "${LimitAutoCronExampleSh}" ]] && echo -e "${Error} LimitAutoCronExampleSh download failed !" && exit 1
 [[ ! -e "${LimitAutoCronBin}" ]] && echo -e "${Error} LimitAutoCronBin download failed !" && exit 1
