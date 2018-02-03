@@ -16,11 +16,11 @@ done
 BinPath="/usr/local/autolimit/limit/"
 PID="examplea"
 Totaltimes="24"
-MaxCPU="100"
+MaxCPU="50"
 
 if (( "$times" < "$Totaltimes" )) ; then
 	CPUNOW=`ps aux | grep "${PID}" | awk '{print $3}'`
-	CPUNEW=`ps aux | grep "${PID}" | awk '{print $3}' | grep -wf <(seq 100 400)`
+	CPUNEW=`ps aux | grep "${PID}" | awk '{print $3}' | grep -wf <(seq 60 400)`
 	Date=`date`
 	  if [[ ! -n "${CPUNEW}" ]] ; then
 	    echo -e "[${Date}]: ${times} time(s). Now this process does not exceed the threshold. PID ${PID},CPU ${CPUNOW}" >> ${BinPath}log.txt
