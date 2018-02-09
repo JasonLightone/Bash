@@ -9,9 +9,7 @@ Tip="${Green_font_prefix}[Tip]${Font_color_suffix}"
 LimitAutoBin="/usr/local/autolimit/bin.sh"
 LimitAutoCronExampleSh="/usr/local/autolimit/limit/default-example.sh
 LimitAutoCronBin="/usr/local/autolimit/limit/main.sh"
-
 [[ -e "${LimitAutoBin}" ]] && echo -e "${Error} Autolimit is installed !" && exit 1
-
 mkdir /usr/local/autolimit
 mkdir /usr/local/autolimit/limit
 wget https://raw.githubusercontent.com/JasonLightone/Bash/master/AutoLimit/v0.1/bin.sh -qO ${LimitAutoBin}
@@ -20,11 +18,4 @@ wget https://raw.githubusercontent.com/JasonLightone/Bash/master/AutoLimit/v0.1/
 [[ ! -e "${LimitAutoBin}" ]] && echo -e "${Error} AutolimitBin download failed !" && exit 1
 [[ ! -e "${LimitAutoCronExampleSh}" ]] && echo -e "${Error} LimitAutoCronExampleSh download failed !" && exit 1
 [[ ! -e "${LimitAutoCronBin}" ]] && echo -e "${Error} LimitAutoCronBin download failed !" && exit 1
-cronfile="/tmp/crontab.${USER}"
-crontab -l > $cronfile
-echo "*/5 * * * * bash /etc/local/autolimit/bin.sh" >> $cronfile
-echo "*/5 * * * * bash /etc/local/autolimit/limit/main.sh" >> $cronfile
-crontab $cronfile
-rm -rf $cronfile
-echo -e "Cron set success."
-echo -e "Install success."
+echo -e "${Info} Install success."
